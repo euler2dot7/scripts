@@ -1,0 +1,7 @@
+#adroid aliases
+alias ad='adb devices'
+alias adb_reboot='adb devices | grep 2E6408 | cut -sf -1 | parallel adb -s {} reboot'
+alias adb_cnh_fw='adb devices | tail -n +2 | cut -sf -1 | xargs -I X adb -s X shell getprop ro.build.version'
+alias apkinstall="adb devices | grep 2E6408 | cut -sf 1 | xargs -I X adb -s X install -r $1"
+alias rmapp="adb devices | grep 2E6408 | cut -sf 1 | parallel adb -s {} uninstall $1 "
+
